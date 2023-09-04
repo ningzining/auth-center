@@ -18,7 +18,7 @@ import (
 //	@Router		/base/login [post]
 func Login(ctx *gin.Context) {
 	var req v1.LoginReq
-	if err := ctx.ShouldBindQuery(&req); err != nil {
+	if err := ctx.ShouldBindJSON(&req); err != nil {
 		result.Error(ctx, err)
 		return
 	}
