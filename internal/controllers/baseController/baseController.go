@@ -7,6 +7,15 @@ import (
 	"github.com/ningzining/auth-center/internal/services/baseService"
 )
 
+// Login
+//
+//	@Summary	登录
+//	@Tags		base
+//	@Accept		json
+//	@Produce	json
+//	@Param		LoginReq	body		v1.LoginReq	true	"登录请求参数"
+//	@Success	200			{object}	result.Result(data=null)
+//	@Router		/base/login [post]
 func Login(ctx *gin.Context) {
 	var req v1.LoginReq
 	if err := ctx.ShouldBindQuery(&req); err != nil {
